@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>[TITLE]</title>
+		<title>NBA Combine</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -83,13 +83,6 @@
 								</ul>
 							</section>
 
-						<!-- Actions -->
-							<!-- <section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section> -->
-
 					</section>
 
 				<!-- Main -->
@@ -99,73 +92,44 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+										<h2><a href="#">Neural Network: NBA Draft Combine Predictions</a></h2>
+										<p>Brya Patterson, et al., Summer 2025, University of Washington, MS Information Management (MSIM)</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
+										<time class="published" datetime="2025-08-19">August 19, 2025</time>
 										<a href="#" class="author"><span class="name">Brya K. Patterson</span><img src="images/profile.jpg" alt="" /></a>
 									</div>
 								</header>
-								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
-								<!-- <footer>
-									<ul class="stats">
-										<li><a href="#">Research</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
+								<span class="image featured"><img src="images/nba-unsplash.jpg" alt="" /></span>
+								<p>This report investigates whether NBA Draft Combine performance metrics can predict draft outcomes. Utilizing a comprehensive dataset (2000–2025), we applied exploratory data analysis (EDA) and neural network modeling to evaluate the predictive weight of "pure athleticism" versus historical selection trends. While physical metrics provide a baseline, our findings suggest that the modern NBA draft process increasingly prioritizes multi-dimensional skills not captured by combine drills alone.</p>
+								<h4>Key Insights</h4>
+								<p>
+									<ul>
+										<li>Across three model families—MLP, a small Keras neural network, and a tree ensemble—the ceiling stayed around 56–60% accuracy on combine-only features. That convergence points to a data limitation, not a tuning issue.</li>
+										<li>Out-of-time testing in 2025 confirmed the story: accuracy ≈ 0.53, precision ≈ 0.59, recall ≈ 0.80, AUC ≈ 0.50. The model is better at finding most drafted players than ruling out non-draftees, so it’s more useful for ranking than for hard yes/no calls.</li>
+										<li>Permutation Feature Importance shows lane agility drill is the only consistently influential metric; most other drills contribute little. Adding Position didn’t help and sometimes hurt, suggesting limited stable signal or minor overfit.</li>
+										<li>The pipeline choices (fit preprocessing on 2000–2024, hold out 2025, early stopping, dropout) gave a clean generalization check and interpretable diagnostics (PFI, PDP, confusion matrix, ROC).</li>
 									</ul>
-								</footer> -->
+
+								</p>
+								<h4>Conclusion: Can NBA Draft Combine performance metrics alone predict whether a player will be drafted?</h4>
+								<p>The answer is <strong>No</strong>. Across three very different model families (MLP, a Keras neural network, and a tree ensemble) our accuracy stayed in the 56–60% range on past seasons, and the true out-of-time 2025 test landed at ~0.53 accuracy with an AUC near 0.50. </p>
+								<p>Adding a simple positional feature did not help. These results point to a data ceiling rather than a tuning issue: draft decisions depend on factors the combine does not measure. A more holistic dataset should raise the ceiling</p>
+								<p>Methodologically, we’d frame the task as ranking (top-K recall, PR-AUC) or predicting tiers/pick ranges rather than a hard yes/no, calibrate probabilities, tune thresholds to the intended use, and validate with rolling year-by-year splits. With that broader feature set and evaluation framing, a neural network or calibrated gradient-boosting model should produce a more accurate and actionable draft projection—something the combine alone simply can’t deliver. With a richer, context-aware dataset and calibrated modeling, we’re confident the next iteration will move from “interesting” to genuinely predictive—an exciting step toward a reliable draft forecasting tool.</p>
+								
+								<h4>Resources</h4>
+								<ul>
+									<li><a href="https://docs.google.com/document/d/e/2PACX-1vQDB678cyQ_U4y41Ye6QvfFDMFuTr1qYAG2AnZ12xIHmI-UYZuissCmCdVj1niLdVQbbGoL9k0WmfG5/pub">Report</a></li>
+								<li><a href="https://github.com/bryap/nba-combine">Github Repository</a></li>
+								
+								</ul>	
+								<div class="responsive-container">
+									<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQN7MacBvq-l0wxbTAZ6L3xnj2uxlsKFo6THtCc1guTwashclrJzbLj5xE6QKbRhUakkgi5DpITE6YY/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								</div>
+								</div>
+
 							</article>
-						<!-- Mini Posts -->
-							<!-- <section>
-								<div class="mini-posts">  -->
-
-									<!-- Mini Post -->
-										<!-- <article class="mini-post">
-											<header>
-												<h3><a href="single.html">Vitae sed condimentum</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										</article> -->
-
-									<!-- Mini Post -->
-										<!-- <article class="mini-post">
-											<header>
-												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
-												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										</article> -->
-
-									<!-- Mini Post -->
-										<!-- <article class="mini-post">
-											<header>
-												<h3><a href="single.html">Odio congue mattis</a></h3>
-												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										</article> -->
-
-									<!-- Mini Post -->
-										<!-- <article class="mini-post">
-											<header>
-												<h3><a href="single.html">Enim nisl veroeros</a></h3>
-												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
-										</article> -->
-								<!-- </div>
-							</section>	
-
-					</div> -->
-
+						
 				<!-- Footer -->
 					<section id="footer">
 						<h4>Let's Connect!</h4>
