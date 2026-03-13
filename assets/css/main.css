@@ -3613,14 +3613,14 @@ input, select, textarea {
 
 		}
 
+/* Shared Logic: Keeps the absolute positioning and centering */
 .responsive-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 800px;    /* Prevents it from getting too wide */
-  margin-left: auto;   /* Centers the container */
-  margin-right: auto;  /* Centers the container */
-  padding-top: 56.25%; /* 16:9 ratio */
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2em;
 }
 
@@ -3631,6 +3631,18 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Specific Formatting for Slides (16:9 Ratio) */
+.slides-aspect {
+  padding-top: 56.25%; 
+}
+
+/* Specific Formatting for Docs (A4/Portrait Ratio) */
+/* 130% provides a taller, paper-like feel for documents */
+.doc-aspect {
+  padding-top: 130%; 
+  max-width: 1000px; /* Docs often look better slightly narrower */
 }
 
 /* --- Gallery Grid Layout --- */

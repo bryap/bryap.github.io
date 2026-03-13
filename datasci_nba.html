@@ -101,8 +101,9 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/nba-unsplash.jpg" alt="" /></span>
+								<h4>Overview</h4>
 								<p>This report investigates whether NBA Draft Combine performance metrics can predict draft outcomes. Utilizing a comprehensive dataset (2000–2025), we applied exploratory data analysis (EDA) and neural network modeling to evaluate the predictive weight of "pure athleticism" versus historical selection trends. While physical metrics provide a baseline, our findings suggest that the modern NBA draft process increasingly prioritizes multi-dimensional skills not captured by combine drills alone.</p>
-								<h4>Key Insights</h4>
+								<h3>Key Insights</h3>
 								<p>
 									<ul>
 										<li>Across three model families—MLP, a small Keras neural network, and a tree ensemble—the ceiling stayed around 56–60% accuracy on combine-only features. That convergence points to a data limitation, not a tuning issue.</li>
@@ -112,12 +113,12 @@
 									</ul>
 
 								</p>
-								<h4>Conclusion: Can NBA Draft Combine performance metrics alone predict whether a player will be drafted?</h4>
+								<h3>Conclusion: Can NBA Draft Combine performance metrics alone predict whether a player will be drafted?</h3>
 								<p>The answer is <strong>No</strong>. Across three very different model families (MLP, a Keras neural network, and a tree ensemble) our accuracy stayed in the 56–60% range on past seasons, and the true out-of-time 2025 test landed at ~0.53 accuracy with an AUC near 0.50. </p>
 								<p>Adding a simple positional feature did not help. These results point to a data ceiling rather than a tuning issue: draft decisions depend on factors the combine does not measure. A more holistic dataset should raise the ceiling</p>
 								<p>Methodologically, we’d frame the task as ranking (top-K recall, PR-AUC) or predicting tiers/pick ranges rather than a hard yes/no, calibrate probabilities, tune thresholds to the intended use, and validate with rolling year-by-year splits. With that broader feature set and evaluation framing, a neural network or calibrated gradient-boosting model should produce a more accurate and actionable draft projection—something the combine alone simply can’t deliver. With a richer, context-aware dataset and calibrated modeling, we’re confident the next iteration will move from “interesting” to genuinely predictive—an exciting step toward a reliable draft forecasting tool.</p>
 								
-								<h4>Resources</h4>
+								<h3>Resources</h3>
 								<ul>
 									<li><a href="https://docs.google.com/document/d/e/2PACX-1vQDB678cyQ_U4y41Ye6QvfFDMFuTr1qYAG2AnZ12xIHmI-UYZuissCmCdVj1niLdVQbbGoL9k0WmfG5/pub">Report</a></li>
 								<li><a href="https://github.com/bryap/nba-combine">Github Repository</a></li>
