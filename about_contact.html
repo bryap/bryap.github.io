@@ -96,19 +96,19 @@
 					<div id="main">
 
 						<!-- Post -->
-							<article class="post">
+							<!-- <article class="post">
 								<header>
 									<div class="title">
 										<h2><a href="#">About Me: Brya Kim Patterson</a></h2>
 										<p><i>(pronounced br-eye-ah)</i></p>
-									</div>
+									</div> -->
 									<!-- <div class="meta">
 										<time class="published" datetime="2015-11-01">November 1, 2015</time>
 										<a href="#" class="author"><span class="name">Brya K. Patterson</span><img src="images/profile.jpg" alt="" /></a>
 									</div> -->
-								</header>
+								<!-- </header>
 								<span class="image featured"><img src="images/notebook-unsplash.jpg" alt="" /></span>
-								<p>Born and raised in the Pacific Northwest, I am a data professional with a passion for turning complex information into actionable insights. I hold an MS in Information Management from the University of Washington and a BS in General Science, Computer Science, and Ethics from the University of Oregon. My background combines technical rigor in Data Science and Business Intelligence with a foundational understanding of computer science concepts. I am based in Portland, Oregon and when I’m not diving into datasets, you can find me practicing fiber arts, maintaining my aquariums, or lost in a good book or video game. </p>
+								<p>Born and raised in the Pacific Northwest, I am a data professional with a passion for turning complex information into actionable insights. I hold an MS in Information Management from the University of Washington and a BS in General Science, Computer Science, and Ethics from the University of Oregon. My background combines technical rigor in Data Science and Business Intelligence with a foundational understanding of computer science concepts. I am based in Portland, Oregon and when I’m not diving into datasets, you can find me practicing fiber arts, maintaining my aquariums, or lost in a good book or video game. </p> -->
 								<!-- <footer>
 									<ul class="stats">
 										<li><a href="#">Research</a></li>
@@ -116,7 +116,68 @@
 										<li><a href="#" class="icon solid fa-comment">128</a></li>
 									</ul>
 								</footer> -->
+							<!-- </article> -->
+
+
+							<article class="post">
+							    <header>
+							        <div class="title">
+							            <h2><a href="#">About Me: Brya Kim Patterson</a></h2>
+							            <p><i>(pronounced br-eye-ah)</i></p>
+							        </div>
+							    </header>
+
+							    <style>
+							        .custom-split-container {
+							            display: flex;
+							            flex-wrap: wrap;
+							            gap: 2rem;
+							            align-items: flex-start;
+							            margin-bottom: 2rem;
+							        }
+							        .custom-split-image {
+							            flex: 0 0 25%; /* Reduced from 35% to 25% for a smaller profile look */
+							            max-width: 220px; /* Limits the physical size so it stays proportional to the text */
+							            min-width: 180px; /* Ensures it doesn't get TOO tiny on medium screens */
+							        }
+							        
+							        .custom-split-image img {
+							            width: 100%;
+							            height: auto;
+							            border-radius: 8px; /* Slightly softer corners */
+							            display: block;
+							            border: 1px solid #efefef; /* Optional: adds a subtle frame */
+							        }
+							        .custom-split-text {
+							            flex: 1; /* Text takes up the remaining space */
+							            min-width: 300px;
+							        }
+							        
+							        /* Mobile optimization: stack them vertically on small screens */
+							        @media screen and (max-width: 736px) {
+							            .custom-split-image {
+							                flex: 0 0 100%;
+							            }
+							        }
+							    </style>
+
+							    <div class="custom-split-container">
+							        <div class="custom-split-image">
+							            <img src="images/brya_headshot.png" alt="Portrait of Brya Kim Patterson" />
+							        </div>
+
+							        <div class="custom-split-text">
+							            <p>Born and raised in the Pacific Northwest, I am a data professional with a passion for turning complex information into actionable insights. I hold an MS in Information Management from the University of Washington and a BS in General Science, Computer Science, and Ethics from the University of Oregon.</p>
+							            <p>My background combines technical rigor in Data Science and Business Intelligence with a foundational understanding of computer science concepts. I thrive at the intersection of data and strategy, specializing in cleaning messy, real-world datasets to build predictive models that drive smarter business decisions. I am a lifelong learner who finds the most value in the nuance of a problem; I enjoy leading with interrogative questions to ensure the "why" behind the data is as clear as the "what." My goal is to make data accessible and interpretable for stakeholders at every level.</p>
+							            <p>My recent work has focused on advanced, predictive analytics to estimate support contact volume at Block, Inc., using Python and SQL. Beyond the data, I am a dedicated servant leader. In my role as a Scrum Master, I developed a sprint framework that empowered individual contributors to practice Scrum values, experience true autonomy in their decision-making, and collectively define what quality looks like across the team.</p>
+							            <p>I am currently based in Portland, Oregon. When I’m not diving into datasets, you can find me practicing fiber arts, maintaining my aquariums, or lost in a good book or video game. I’m always open to discussing data ethics, new emerging trends and technologies, or the best RPGs of the year. Let's connect!</p>
+							        </div>
+							    </div>
 							</article>
+
+
+
+
 						<!-- Mini Posts -->
 							<section>
 								<h2>My Favorite Projects</h2>
