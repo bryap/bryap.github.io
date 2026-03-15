@@ -95,14 +95,53 @@
 
 				<!-- Main -->
 					<div id="main">
+
+						<!-- Filter -->
+						<section id="filter-interface" style="margin-bottom: 3em;">
+						    <header>
+						        <h3 style="font-size: 0.8em; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1em;">Filter Projects</h3>
+						    </header>
+						    
+						    <div class="filter-group" style="margin-bottom: 1.5em;">
+						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Type:</span>
+						        <ul class="actions" style="display: inline-flex; margin-bottom: 0;">
+						            <li><button class="filter-btn button small active" data-filter-type="category" data-value="all">All</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="category" data-value="data-science">Data Science</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="category" data-value="data-engineering">Data Engineering</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="category" data-value="scrum">Scrum</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="category" data-value="research">Research</button></li>
+						        </ul>
+						    </div>
+
+						    <div class="filter-group">
+						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Tools:</span>
+						        <ul class="actions" style="display: inline-flex; margin-bottom: 0;">
+						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="python">Python</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="sql">SQL</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="r">R</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="ml">ML</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="agile">Agile</button></li>
+						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="study">Case Study</button></li>
+						        </ul>
+						    </div>
+						    <div id="no-results" style="display: none; padding: 4em 2em; text-align: center; border: 1px dashed rgba(160, 160, 160, 0.5); border-radius: 4px; margin-top: 2em;">
+							    <h3 style="font-size: 0.8em; letter-spacing: 0.25em; text-transform: uppercase;">No matching projects found</h3>
+							    <p>Try selecting a different category or tool.</p>
+							    <ul class="actions special">
+							        <li><button class="button small" onclick="document.querySelector('[data-value=\'all\']').click();">Reset Filters</button></li>
+							    </ul>
+							</div>
+						</section>
+
+
+						<!-- Sections -->
 						<h1>Scrum Master</h1>
 								<section>
 									<!-- <p>More content coming soon</p> -->
-							<ul class="actions"><li><a href="https://www.scrum.org/certificates/1201467" class="button large">Scrum Certifcation</a></li></ul>
 										<div class="mini-posts"> 
 
 											<!-- Mini Post -->
-												<article class="mini-post">
+												<article class="mini-post" data-category="scrum" data-tags="agile study">
 													<header>
 														<h3><a href="scrum_casestudy.html">Case Study: Adapting Scrum for Data Analytics Teams</a></h3>
 														<time class="published" datetime="2026-11-01">March 1, 2026</time>
@@ -111,26 +150,7 @@
 													<a href="scrum_casestudy.html" class="image"><img src="images/scrum-unsplash.jpg" alt="" /></a>
 												</article>
 
-											<!-- Mini Post -->
-												<!-- <article class="mini-post">
-													<header>
-														<h3><a href="single.html">Rutrum neque accumsan</a></h3>
-														<time class="published" datetime="2015-10-19">October 19, 2015</time>
-														
-													</header>
-													<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-												</article> -->
-
-											<!-- Mini Post -->
-												<!-- <article class="mini-post">
-													<header>
-														<h3><a href="single.html">Odio congue mattis</a></h3>
-														<time class="published" datetime="2015-10-18">October 18, 2015</time>
-														
-													</header>
-													<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-												</article> -->
-
+											<!-- add more here -->
 										</div>
 									</section>
 
@@ -142,7 +162,7 @@
 								<div class="mini-posts"> 
 
 									<!-- Mini Post -->
-										<article class="mini-post">
+										<article class="mini-post" data-category="research" data-tags="study">
 											<header>
 												<h3><a href="research_joann.html">Navigating Discretionary Retail:  A Turnaround Strategy for JOANN</a></h3>
 												<time class="published" datetime="2025-06-06">June 06, 2025</time>
@@ -152,7 +172,7 @@
 										</article>
 
 									<!-- Mini Post -->
-										<article class="mini-post">
+										<article class="mini-post" data-category="research" data-tags="study ml">
 											<header>
 												<h3><a href="research_underbanked.html">Banking the underbanked: Non-traditional bank services for underbanked</a></h3>
 												<time class="published" datetime="2015-11-01">May 31, 2024</time>
@@ -164,26 +184,7 @@
 										</article>
 
 
-									<!-- Mini Post -->
-										<!-- <article class="mini-post">
-											<header>
-												<h3><a href="single.html">Journey to the Job</a></h3>
-												<time class="published" datetime="TBD">TBD</time>
-												
-											</header>
-											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										</article> -->
-
-									<!-- Mini Post -->
-										<!-- <article class="mini-post">
-											<header>
-												<h3><a href="single.html">The Fit-By-Bit Analysis</a></h3>
-												<time class="published" datetime="2026-10-03">March, 10, 2026</time>
-												
-											</header>
-											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										</article> -->
-
+									<!-- add more here -->
 									
 								</div>
 							</section>
@@ -193,7 +194,7 @@
 									<div class="mini-posts">
 
 										<!-- Mini Post -->
-										<article class="mini-post">
+										<article class="mini-post" data-category="data-science" data-tags="ml python">
 											<header>
 												<h3><a href="datasci_nba.html">Neural Network: NBA Draft Combine Predictions</a></h3>
 												<time class="published" datetime="2025-08-19">August 19, 2025</time>
@@ -203,7 +204,7 @@
 										</article>
 
 										<!-- Mini Post -->
-										<article class="mini-post">
+										<article class="mini-post" data-category="data-science" data-tags="ml python">
 											<header>
 												<h3><a href="datasci_credit.html">Give Me Some Credit: Predictive Credit Risk Modeling</a></h3>
 												<time class="published" datetime="2025-05-25">May 25, 2025</time>
@@ -215,7 +216,7 @@
 
 
 									<!-- Mini Post -->
-										<article class="mini-post">
+										<article class="mini-post" data-category="data-science" data-tags="ml r">
 											<header>
 												<h3><a href="datasci_ricefarms_pt1.html">Part 1 - A Grain of Truth: What Actually Drives Rice Yields?</a></h3>
 												<time class="published" datetime="2024-05-08">May 08, 2024</time>
@@ -233,7 +234,7 @@
 										<div class="mini-posts"> 
 
 											<!-- Mini Post -->
-												<article class="mini-post">
+												<article class="mini-post" data-category="data-engineering" data-tags="sql">
 													<header>
 														<h3><a href="dataeng_fishkeepingDB.html">Relational Databases: Designing relationships for fishkeeping hobbists</a></h3>
 														<time class="published" datetime="2024-17-08">August 17, 2024</time>
@@ -270,6 +271,96 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			document.addEventListener('DOMContentLoaded', () => {
+			    const filterButtons = document.querySelectorAll('.filter-btn');
+			    const projects = document.querySelectorAll('article.mini-post');
+			    const headers = document.querySelectorAll('#main h1, #main h2:not(#filter-interface h2)');
+			    const noResultsMsg = document.getElementById('no-results');
+
+			    filterButtons.forEach(button => {
+			        button.addEventListener('click', (e) => {
+			            e.preventDefault();
+
+			            const filterType = button.getAttribute('data-filter-type');
+			            const filterValue = button.getAttribute('data-value').toLowerCase();
+
+			            // 1. Manage Active States
+			            if (filterType === 'category') {
+			                // Category remains single-select
+			                const parentGroup = button.closest('.filter-group');
+			                parentGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+			                button.classList.add('active');
+			            } else {
+			                // Tools become multi-select toggle
+			                if (filterValue === 'all') {
+			                    // Clicking "All" clears all other active tool tags
+			                    const parentGroup = button.closest('.filter-group');
+			                    parentGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+			                    button.classList.add('active');
+			                } else {
+			                    // Clicking a specific tool toggles it and removes "All"
+			                    button.classList.toggle('active');
+			                    const allBtn = button.closest('.filter-group').querySelector('[data-value="all"]');
+			                    if (allBtn) allBtn.classList.remove('active');
+			                    
+			                    // If no tools are left selected, reactivate "All"
+			                    const activeTools = button.closest('.filter-group').querySelectorAll('.filter-btn.active');
+			                    if (activeTools.length === 0 && allBtn) allBtn.classList.add('active');
+			                }
+			            }
+
+			            // 2. Identify Current Filter State
+			            const activeCategoryBtn = document.querySelector('.filter-btn[data-filter-type="category"].active');
+			            const activeCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-value') : 'all';
+			            
+			            const activeToolBtns = document.querySelectorAll('.filter-btn[data-filter-type="tag"].active');
+			            const selectedTools = Array.from(activeToolBtns)
+			                                     .map(btn => btn.getAttribute('data-value').toLowerCase())
+			                                     .filter(val => val !== 'all');
+
+			            let visibleCount = 0;
+
+			            // 3. Filtering Logic
+			            projects.forEach(project => {
+			                const projectCat = (project.getAttribute('data-category') || "").toLowerCase();
+			                const projectTags = (project.getAttribute('data-tags') || "").toLowerCase().split(' ');
+
+			                // Check Category Match
+			                const matchesCategory = (activeCategory === 'all' || projectCat === activeCategory);
+			                
+			                // Check if project has ALL selected tools
+			                const matchesAllTools = selectedTools.every(tool => projectTags.includes(tool));
+
+			                const isVisible = matchesCategory && matchesAllTools;
+			                
+			                project.style.display = isVisible ? 'block' : 'none';
+			                if (isVisible) visibleCount++;
+			            });
+
+			            // 4. Update UI (No Results & Headers)
+			            if (noResultsMsg) noResultsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+
+			            headers.forEach(header => {
+			                let hasVisibleProject = false;
+			                let nextEl = header.nextElementSibling;
+			                while (nextEl && !['H1', 'H2'].includes(nextEl.tagName)) {
+			                    if (nextEl.classList.contains('mini-post') && nextEl.style.display !== 'none') {
+			                        hasVisibleProject = true;
+			                        break;
+			                    }
+			                    if (nextEl.classList.contains('mini-posts')) {
+			                        const anyVisible = Array.from(nextEl.querySelectorAll('article.mini-post')).some(p => p.style.display !== 'none');
+			                        if (anyVisible) { hasVisibleProject = true; break; }
+			                    }
+			                    nextEl = nextEl.nextElementSibling;
+			                }
+			                header.style.display = (activeCategory === 'all' && selectedTools.length === 0) || hasVisibleProject ? 'block' : 'none';
+			            });
+			        });
+			    });
+			});
+			</script>
 
 	</body>
 </html>
