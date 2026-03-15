@@ -2323,20 +2323,29 @@ input, select, textarea {
 				width: 100%;
 			}
 
-		.image.featured {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
+.image.featured {
+			display: inline-block; /* Essential for floating to work */
+			float: left; /* Key property: left-aligns the image and allows text to wrap */
+			margin: 0.5em 2em 1em 0; /* Adds spacing around the image: top right bottom left */
+			width: 60%; /* Adjust this percentage to control the image size on large screens */
+			max-width: 450px; /* Safety limit so the image doesn't get too large on wide screens */
 		}
 
 			.image.featured img {
-				width: 100%;
+				width: 100%; /* Image fills its container (45% width) */
+				height: auto; /* Maintains the image's aspect ratio */
+				border-radius: 4px; /* Optional: adds a slight rounded corner */
+				display: block; /* Prevents tiny gaps below the image */
 			}
 
 			@media screen and (max-width: 736px) {
-
+				/* Optimization for smaller mobile screens */
 				.image.featured {
-					margin: 0 0 1.5em 0;
+					float: none; /* Removes the float so it stacks on mobile */
+					display: block; /* Turns it back into a centered block */
+					width: 90%; /* Make it wider on mobile to use screen space */
+					max-width: none; /* Let the percentage control size on mobile */
+					margin: 0 auto 1.5em auto; /* Centers the image on mobile with bottom margin */
 				}
 
 			}
