@@ -99,9 +99,14 @@
 						<!-- Filter -->
 						<section id="filter-interface" style="margin-bottom: 3em;">
 						    <header>
-						        <h3 style="font-size: 0.8em; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1em;">Filter Projects</h3>
+						    	<h2>Projects and Other Works</h2>
+						        <!-- <h3 style="font-size: 0.8em; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1em;">Filter Projects</h3> -->
 						    </header>
-						    
+						    <details class="filter-menu">
+						        <summary>
+						            <span>Filter Projects by Type or Tool</span>
+						        </summary>
+						        <div class="filter-content">
 						    <div class="filter-group" style="margin-bottom: 1.5em;">
 						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Type:</span>
 						        <ul class="actions" style="display: inline-flex; margin-bottom: 0;">
@@ -127,6 +132,8 @@
 						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="ir">Independent Research</button></li>
 						        </ul>
 						    </div>
+						</div>
+					</details>
 						    <div id="no-results" style="display: none; padding: 4em 2em; text-align: center; border: 1px dashed rgba(160, 160, 160, 0.5); border-radius: 4px; margin-top: 2em;">
 							    <h3 style="font-size: 0.8em; letter-spacing: 0.25em; text-transform: uppercase;">No matching projects found</h3>
 							    <p>Try selecting a different category or tool.</p>
@@ -219,7 +226,7 @@
 
 
 									<!-- Mini Post -->
-										<article class="mini-post" data-category="data-science" data-tags="ml r msim">
+										<article class="mini-post" data-category="data-science" data-tags="ml r msim ir">
 											<header>
 												<h3><a href="datasci_ricefarms_pt1.html">Part 1 - A Grain of Truth: What Actually Drives Rice Yields?</a></h3>
 												<time class="published" datetime="2024-05-08">May 08, 2024</time>
@@ -364,6 +371,24 @@
 			    });
 			});
 			</script>
+			<script>
+        function resetFilters() {
+            // 1. Trigger the "All" button click to clear logic
+            const allBtn = document.querySelector('[data-value="all"]');
+            if (allBtn) {
+                allBtn.click();
+            }
+            
+            // 2. Hide the No Results box
+            const noResults = document.getElementById('no-results');
+            if (noResults) {
+                noResults.style.display = 'none';
+            }
+        }
+    </script>
+
+
+
 
 	</body>
 </html>

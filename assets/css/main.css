@@ -3735,3 +3735,170 @@ input, select, textarea {
     flex-wrap: wrap;
     margin-bottom: 1.5em;
 }
+
+/* Container styling */
+details.filter-menu {
+    border: 1px solid rgba(160, 160, 160, 0.3);
+    border-radius: 4px;
+    margin-bottom: 2em;
+    background: #fff;
+}
+
+/* The clickable bar */
+details.filter-menu summary {
+    padding: 1em;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    color: #8C5845;
+}
+
+/* Custom arrow for the summary */
+details.filter-menu summary::-webkit-details-marker { display: none; }
+details.filter-menu summary::before {
+    margin-right: 10px;
+}
+
+/* The content inside */
+.filter-content {
+    padding: 1.5em;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+/* DESKTOP VIEW: Force it to be open and hide the toggle UI */
+@media screen and (min-width: 768px) {
+    details.filter-menu {
+        border: none;
+        background: transparent;
+    }
+    details.filter-menu summary {
+        display: none; /* Hide the "Filter by..." bar on desktop */
+    }
+    .filter-content {
+        padding: 0;
+        border-top: none;
+    }
+    details.filter-menu {
+        display: block; /* Ensure content is visible */
+    }
+}
+
+
+/* Force the default arrow to show if the theme hid it */
+details.filter-menu summary {
+    display: list-item; /* This often brings back the default arrow */
+}
+
+/* If you want a custom modern arrow (recommended) */
+details.filter-menu summary::after {
+    content: ' \25BC'; /* This is a unicode downward arrow ▼ */
+    font-size: 0.6em;
+    margin-left: auto; /* Pushes it to the far right */
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when the menu is open */
+details[open].filter-menu summary::after {
+    transform: rotate(180deg);
+}
+
+
+
+/* Container for the cards */
+.leadership-pillars {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+}
+
+/* Individual Card Styling */
+.pillar-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid rgba(160, 160, 160, 0.3);
+    border-top: 4px solid #8C5845; /* Theme-friendly accent color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pillar-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.pillar-card h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.pillar-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    color: #666;
+}
+
+/* Container styling */
+details.project-deep-dive {
+    margin: 2rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+/* The clickable header */
+details.project-deep-dive summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: #8C5845; /* Your theme accent color */
+    list-style: none; /* Removes default arrow in some browsers */
+    display: flex;
+    align-items: center;
+}
+
+/* Custom arrow indicator */
+details.project-deep-dive summary::before {
+    content: '▶';
+    margin-right: 10px;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when open */
+details[open].project-deep-dive summary::before {
+    transform: rotate(90deg);
+}
+
+/* The content inside when expanded */
+.details-content {
+    padding: 1.5rem;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    line-height: 1.6;
+}
