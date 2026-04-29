@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-79XBZ4630Q"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-79XBZ4630Q');
+		</script>
+		<title>Log Reconstruction & Threat Hunting: Deep-Dive into Automated Business Email Compromise</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Brya K. Patterson Portfolio</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="projects_work.html">Projects</a></li>
+								<li><a href="resume_skills.html">Resume</a></li>
+								<li><a href="about_contact.html">About</a></li>
+								<!-- <li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<!-- <li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li> -->
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+						<h1>Menu</h1>
+						<!-- Search -->
+							<!-- <section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section> -->
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="projects_work.html">
+											<h3>Projects and Other Works</h3>
+											<p>End-to-end data pipelines, predictive ML models, research, and passion projects.</p>
+										</a>
+									</li>
+									<li>
+										<a href="resume_skills.html">
+											<h3>Resume and Skills</h3>
+											<p>Technical expertise, toolstack, and professional career history.</p>
+										</a>
+									</li>
+									<li>
+										<a href="about_contact.html">
+											<h3>About and Contact</h3>
+											<p>Bio, professional background, and how to connect.</p>
+										</a>
+									</li>
+									<!-- <li>
+										<a href="brya_inc.html">
+											<h3>Brya Inc</h3>
+											<p>Core values, mission, and my personal leadership philosophy.</p>
+										</a>
+									</li> -->
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<!-- <section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section> -->
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Log Reconstruction & Threat Hunting: Deep-Dive into Automated Business Email Compromise</a></h2>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2025-12-03">December 3, 2025</time>
+										<a href="#" class="author"><span class="name">Brya K. Patterson</span><img src="images/profile.jpg" alt="" /></a>
+									</div>
+								</header>
+								<span class="image featured"><img src="images/cybersec-unsplash.jpg" alt="" /></span>
+								
+							<h3>Executive Summary</h3>
+							<p>
+								<ol>
+									<li><strong>The Mission: </strong>Conduct a deep-dive forensic investigation into a multi-stage Business Email Compromise (BEC) 
+										attack as part of the UW MSIS Cybersecurity curriculum. The goal was to reconstruct a fragmented 360 MB Unified Audit Log (UAL) 
+										to identify the "blast radius" of a 21-day intrusion.</li>
+									<li><strong>Impact: </strong>The investigation uncovered the compromise of 23 unique user accounts and the automated exfiltration 
+										of 7,256 sensitive mail items via "mailbox dumping" scripts.</li>
+									<li><strong>Core Capabilities: </strong>Utilized Python (Pandas) and DuckDB for log normalization and SQL-based behavioral 
+										analysis, mapping attacker tactics to the MITRE ATT&CK® Framework (T1566 & T1114.002).</li>
+								</ol>
+							</p>
+
+							<h3>The Results</h3>
+							<p>The analysis successfully identified a sophisticated tenant-level takeover. The attacker utilized a distributed proxy network (IP 3.0.0.1) 
+								and automated "0-second" authentication gaps to bypass security baselines.Most critically, the project documented 
+								a privilege escalation where the SYSTEM account was used to grant FullAccess to the Discovery Search Mailbox, providing the attacker with 
+								global search capabilities across the firm.</p>
+							<br>
+
+							<section class="leadership-pillars">
+								<div class="pillar-card">
+									<h3>Forensic Log Reconstruction</h3>
+									<p>Managed 141,406 records by merging fragmented CSVs and standardizing mixed timestamps into UTC, optimizing the dataset for 
+										high-performance SQL analysis in DuckDB.</p>
+								</div>
+
+								<div class="pillar-card">
+									<h3>Threat Hunting & Automation</h3>
+									<p>Identified "Bridge IPs" and used authentication velocity to prove script automation. Discovered
+										rules used to silence alerts and facilitate conversation thread hijacking.</p>
+								</div>
+
+								<div class="pillar-card">
+									<h3>Remediation Strategy</h3>
+									<p>Developed a recovery plan focusing on session revocation, programmatic removal of malicious rules, 
+										and the transition toward a Zero Trust architecture.</p>
+								</div>
+							</section>
+
+							<details class="project-deep-dive">
+								<summary>View Full Case Study</summary>
+								<div class="details-content">
+									<h3>Overview</h3>
+									<p>This forensic investigation reconstructs a sophisticated, multi-stage Business Email Compromise (BEC) attack 
+										targeting a professional services firm. What began as a single credential phishing link on August 6, 2025, 
+										evolved into a 21-day intrusion that compromised 23 unique user accounts. By analyzing 360 MB 
+										of fragmented Microsoft 365 Unified Audit Logs, this study unmasks the technical maneuvers used by attackers 
+										to transition from simple identity theft to a total tenant-level administrative takeover.</p>
+									<p>By leveraging Python-based log normalization and behavioral anomaly detection, the investigation identifies 
+										how the attacker bypassed security baselines using distributed proxy networks and automated "mailbox dumping" 
+										scripts to exfiltrate over 7,200 sensitive items.</p>
+
+									<h3>Analytical Framework: Investigation Methodology</h3>
+									<p>To transform fragmented raw datasets into a defensible attacker timeline, the analysis was structured around four 
+										forensic objectives:</p>
+									<ol>
+										<li><strong>Log Reconstruction:</strong> Merging fragmented CSV files and standardizing 141,000+ mixed timestamps into a 
+											consistent UTC "source of truth".</li>
+										<li><strong>Behavioral Telemetry:</strong> Using SQL window functions to calculate "Authentication Velocity," identifying 
+											sub-second login gaps that prove automated scripting.</li>
+										<li><strong>Persistence Detection:</strong> Identifying hidden "AlwaysDelete" inbox rules and unauthorized eDiscovery 
+											permissions used to silence security alerts.</li>
+										<li><strong>Blast Radius Quantification:</strong> Mapping the "Bridge IP" (3.0.0.1) across the environment to identify 
+											every compromised account and stolen mail item.</li>
+									</ol>
+
+									<h3>Key Insights</h3>
+									<ul>
+										<li><strong>Scripted Velocity:</strong> The attacker utilized automated tools to access mailboxes in bursts, often accessing 
+											hundreds of items with a 0-second gap between events.</li>
+										<li><strong>The "AlwaysDelete" Maneuver:</strong> Malicious rules were deployed to automatically move vendor replies and 
+											security warnings to hidden folders (e.g., RSS Feeds), allowing the attacker to operate undetected for 21 
+											days.</li>
+										<li><strong>Administrative Takeover:</strong> The attack culminated in an unauthorized escalation where the SYSTEM account 
+											granted FullAccess to the Discovery Search Mailbox, providing the attacker global search capabilities across the entire 
+											firm.</li>
+										<li><strong>Financial Thread Hijacking:</strong> The attacker specifically targeted active invoice threads, inserting fraudulent 
+											banking details into trusted, existing email chains.</li>
+									</ul>
+
+									<h3>Remediation Roadmap</h3>
+									<ul>
+										<li><strong>Immediate Containment:</strong> Revocation of all 23 compromised account sessions and programmatic deletion of 
+											identified malicious inbox rules.</li>
+										<li><strong>Strategic Defense:</strong> Implementation of mandatory Multi-Factor Authentication (MFA) and the disabling of 
+											legacy protocols (POP/IMAP) to prevent automated credential testing.</li>
+										<li><strong>Zero Trust Architecture:</strong> Transitioning from perimeter-based security to a Zero Trust model to mitigate the 
+											impact of administrative privilege escalation.</li>
+									</ul>
+
+									<!-- <h3>Resources</h3>
+									<ul>
+										<li><a href="#">Full Forensic Report (PDF) INSERT PUBLISHED GOOGLE DOC</a></li>
+										<li><a href="#">Python Log Analysis Notebook INSERT GITHUB LINK TO CODE</a></li>
+										<li><a href="https://attack.mitre.org/techniques/T1566/">MITRE ATT&CK: Phishing (T1566)</a></li>
+									</ul> -->
+								</div>
+							</details>
+
+
+								<!-- <footer>
+									<ul class="stats">
+										<li><a href="#">Research</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer> -->
+							</article>
+							</div>
+							</details>
+
+				<!-- Footer -->
+					<section id="footer">
+						<h4>Let's Connect!</h4>
+								<p>Connect with me via LinkedIn or email.</p>
+						<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/brya-patterson/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li> -->
+									<li><a href="mailto:brya.patterson@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+								<p class="copyright">&copy; 2026 Brya K. Patterson Portfolio. Design: <a href="https://html5up.net/future-imperfect">HTML5 UP - Future Imperfect</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
