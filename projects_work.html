@@ -113,22 +113,23 @@
 						    </header>
 						    <details class="filter-menu">
 						        <summary>
-						            <span>Filter Projects by Type or Tool</span>
+						            <span>Filter Projects by Domain or Topic</span>
 						        </summary>
 						        <div class="filter-content">
 						    <div class="filter-group" style="margin-bottom: 1.5em;">
-						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Type:</span>
+						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Domain:</span>
 						        <ul class="actions" style="display: inline-flex; margin-bottom: 0;">
 						            <li><button class="filter-btn button small active" data-filter-type="category" data-value="all">All</button></li>
 						            <li><button class="filter-btn button small" data-filter-type="category" data-value="data-science">Data Science</button></li>
 						            <li><button class="filter-btn button small" data-filter-type="category" data-value="data-engineering">Data Engineering</button></li>
 						            <li><button class="filter-btn button small" data-filter-type="category" data-value="scrum">Scrum</button></li>
 						            <li><button class="filter-btn button small" data-filter-type="category" data-value="research">Research</button></li>
+									<li><button class="filter-btn button small" data-filter-type="category" data-value="mini-proj">Mini-Projects</button></li>
 						        </ul>
 						    </div>
 
 						    <div class="filter-group">
-						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Tools:</span>
+						        <span style="font-family: 'Raleway', sans-serif; font-size: 0.6em; font-weight: 800; text-transform: uppercase; margin-right: 1em;">Topic:</span>
 						        <ul class="actions" style="display: inline-flex; margin-bottom: 0;">
 						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="python">Python</button></li>
 						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="sql">SQL</button></li>
@@ -139,13 +140,14 @@
 						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="msim">MSIM</button></li>
 						            <li><button class="filter-btn button small" data-filter-type="tag" data-value="ir">Independent Research</button></li>
 									<li><button class="filter-btn button small" data-filter-type="tag" data-value="cb">Cybersecurity</button></li>
+									<li><button class="filter-btn button small" data-filter-type="tag" data-value="web-dev">Web Development</button></li>
 						        </ul>
 						    </div>
 						</div>
 					</details>
 						    <div id="no-results" style="display: none; padding: 4em 2em; text-align: center; border: 1px dashed rgba(160, 160, 160, 0.5); border-radius: 4px; margin-top: 2em;">
 							    <h3 style="font-size: 0.8em; letter-spacing: 0.25em; text-transform: uppercase;">No matching projects found</h3>
-							    <p>Try selecting a different category or tool.</p>
+							    <p>Try selecting a different domain or Topic.</p>
 							    <ul class="actions special">
 							        <li><button class="button small" onclick="document.querySelector('[data-value=\'all\']').click();">Reset Filters</button></li>
 							    </ul>
@@ -163,7 +165,7 @@
 												<article class="mini-post" data-category="scrum" data-tags="agile study ir">
 													<header>
 														<h3><a href="scrum_casestudy.html">Case Study: Adapting Scrum for Data Analytics Teams</a></h3>
-														<time class="published" datetime="2026-11-01">March 1, 2026</time>
+														<time class="published" datetime="2026-03-01">March 1, 2026</time>
 														
 													</header>
 													<a href="scrum_casestudy.html" class="image"><img src="images/scrum-unsplash.jpg" alt="" /></a>
@@ -257,7 +259,7 @@
 												<article class="mini-post" data-category="data-engineering" data-tags="sql msim">
 													<header>
 														<h3><a href="dataeng_fishkeepingDB.html">Relational Databases: Designing relationships for fishkeeping hobbists</a></h3>
-														<time class="published" datetime="2024-17-08">August 17, 2024</time>
+														<time class="published" datetime="2024-08-17">August 17, 2024</time>
 														
 													</header>
 													<a href="dataeng_fishkeepingDB.html" class="image"><img src="images/aquarium-unsplash.jpg" alt="" /></a>
@@ -277,6 +279,34 @@
 
 										</div>
 								</section>
+							<h1>Mini-Projects</h1>
+								<section>
+											<div class="mini-posts"> 
+
+												<!-- Mini Post -->
+													<article class="mini-post" data-category="mini-proj" data-tags="web-dev">
+														<header>
+															<h3><a href="my_color_picker.html">My Color Picker: Chrome Browser Extension</a></h3>
+															<time class="published" datetime="2026-05-07">May 07, 2026</time>
+															
+														</header>
+														<a href="my_color_picker.html" class="image"><img src="images/color-unsplash.jpg" alt="" /></a>
+													</article>
+												
+												<!-- Mini Post -->
+												<!-- <article class="mini-post" data-category="data-engineering" data-tags="sql study msim python cb">
+													<header>
+														<h3><a href="cybersec_log_analysis.html">Log Reconstruction & Threat Hunting: Deep-Dive into Automated Business Email Compromise</a></h3>
+														<time class="published" datetime="2025-12-03">December 3, 2025</time>
+														
+													</header>
+
+													<a href="cybersec_log_analysis.html" class="image"><img src="images/cybersec-unsplash.jpg" alt="" /></a>
+
+												</article> -->
+
+											</div>
+									</section>
 
 
 					</div>
