@@ -79,6 +79,7 @@
 								<header>
 									<div class="title">
 										<h2><a href="#">Log Reconstruction & Threat Hunting: Deep-Dive into Automated Business Email Compromise</a></h2>
+										<p>Brya Patterson, Winter 2025, University of Washington, MS Information Management (MSIM)</p>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2025-12-03">December 3, 2025</time>
@@ -92,17 +93,18 @@
 								<ol>
 									<li><strong>The Mission: </strong>Conduct a deep-dive forensic investigation into a multi-stage Business Email Compromise (BEC) 
 										attack as part of the UW MSIM Cybersecurity curriculum. The goal was to reconstruct a fragmented 360 MB Unified Audit Log (UAL) 
-										to identify the "blast radius" of a 21-day intrusion.</li>
-									<li><strong>Impact: </strong>The investigation uncovered the compromise of 23 unique user accounts and the automated exfiltration 
-										of 7,256 sensitive mail items via "mailbox dumping" scripts.</li>
+										to identify the "blast radius" of a 30-day intrusion.</li>
+									<li><strong>Impact: </strong>The investigation uncovered the compromise of about 20 unique user accounts and the automated exfiltration 
+										of over 5,000 sensitive mail items via "mailbox dumping" scripts.</li>
 									<li><strong>Core Capabilities: </strong>Utilized Python (Pandas) and DuckDB for log normalization and SQL-based behavioral 
 										analysis, mapping attacker tactics to the MITRE ATT&CK® Framework (T1566 & T1114.002).</li>
 								</ol>
 							</p>
-
+							<br>
+							<br>
 							<h3>The Results</h3>
-							<p>The analysis successfully identified a sophisticated tenant-level takeover. The attacker utilized a distributed proxy network (IP 3.0.0.1) 
-								and automated "0-second" authentication gaps to bypass security baselines.Most critically, the project documented 
+							<p>The analysis successfully identified a sophisticated tenant-level takeover. The attacker utilized a distributed proxy network 
+								and automated "0-second" authentication gaps to bypass security baselines. Most critically, the project documented 
 								a privilege escalation where the SYSTEM account was used to grant FullAccess to the Discovery Search Mailbox, providing the attacker with 
 								global search capabilities across the firm.</p>
 							<br>
@@ -110,7 +112,7 @@
 							<section class="leadership-pillars">
 								<div class="pillar-card">
 									<h3>Forensic Log Reconstruction</h3>
-									<p>Managed 141,406 records by merging fragmented CSVs and standardizing mixed timestamps into UTC, optimizing the dataset for 
+									<p>Managed over 100,000 records by merging fragmented CSVs and standardizing mixed timestamps into UTC, optimizing the dataset for 
 										high-performance SQL analysis in DuckDB.</p>
 								</div>
 
@@ -132,25 +134,25 @@
 								<div class="details-content">
 									<h3>Overview</h3>
 									<p>This forensic investigation reconstructs a sophisticated, multi-stage Business Email Compromise (BEC) attack 
-										targeting a professional services firm. What began as a single credential phishing link on August 6, 2025, 
-										evolved into a 21-day intrusion that compromised 23 unique user accounts. By analyzing 360 MB 
+										targeting a professional services firm. What began as a single credential phishing link early August, 
+										evolved into a 30-day intrusion that compromised over 20 unique user accounts. By analyzing about 300 MB 
 										of fragmented Microsoft 365 Unified Audit Logs, this study unmasks the technical maneuvers used by attackers 
 										to transition from simple identity theft to a total tenant-level administrative takeover.</p>
 									<p>By leveraging Python-based log normalization and behavioral anomaly detection, the investigation identifies 
 										how the attacker bypassed security baselines using distributed proxy networks and automated "mailbox dumping" 
-										scripts to exfiltrate over 7,200 sensitive items.</p>
+										scripts to exfiltrate over 5,000 sensitive items.</p>
 
 									<h3>Analytical Framework: Investigation Methodology</h3>
 									<p>To transform fragmented raw datasets into a defensible attacker timeline, the analysis was structured around four 
 										forensic objectives:</p>
 									<ol>
-										<li><strong>Log Reconstruction:</strong> Merging fragmented CSV files and standardizing 141,000+ mixed timestamps into a 
+										<li><strong>Log Reconstruction:</strong> Merging fragmented CSV files and standardizing 100,000+ mixed timestamps into a 
 											consistent UTC "source of truth".</li>
 										<li><strong>Behavioral Telemetry:</strong> Using SQL window functions to calculate "Authentication Velocity," identifying 
 											sub-second login gaps that prove automated scripting.</li>
 										<li><strong>Persistence Detection:</strong> Identifying hidden "AlwaysDelete" inbox rules and unauthorized eDiscovery 
 											permissions used to silence security alerts.</li>
-										<li><strong>Blast Radius Quantification:</strong> Mapping the "Bridge IP" (3.0.0.1) across the environment to identify 
+										<li><strong>Blast Radius Quantification:</strong> Mapping the "Bridge IP" across the environment to identify 
 											every compromised account and stolen mail item.</li>
 									</ol>
 
@@ -159,7 +161,7 @@
 										<li><strong>Scripted Velocity:</strong> The attacker utilized automated tools to access mailboxes in bursts, often accessing 
 											hundreds of items with a 0-second gap between events.</li>
 										<li><strong>The "AlwaysDelete" Maneuver:</strong> Malicious rules were deployed to automatically move vendor replies and 
-											security warnings to hidden folders (e.g., RSS Feeds), allowing the attacker to operate undetected for 21 
+											security warnings to hidden folders (e.g., RSS Feeds), allowing the attacker to operate undetected for 30 
 											days.</li>
 										<li><strong>Administrative Takeover:</strong> The attack culminated in an unauthorized escalation where the SYSTEM account 
 											granted FullAccess to the Discovery Search Mailbox, providing the attacker global search capabilities across the entire 
@@ -170,7 +172,7 @@
 
 									<h3>Remediation Roadmap</h3>
 									<ul>
-										<li><strong>Immediate Containment:</strong> Revocation of all 23 compromised account sessions and programmatic deletion of 
+										<li><strong>Immediate Containment:</strong> Revocation of all compromised account sessions and programmatic deletion of 
 											identified malicious inbox rules.</li>
 										<li><strong>Strategic Defense:</strong> Implementation of mandatory Multi-Factor Authentication (MFA) and the disabling of 
 											legacy protocols (POP/IMAP) to prevent automated credential testing.</li>
