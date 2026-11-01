@@ -1,0 +1,18 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Patterson;Brya;Kim;;
+FN:Brya Kim Patterson
+NICKNAME:Brya
+ORG:Self Enhancement\, Inc.
+TITLE:Technology Engagement Administrator
+TEL;TYPE=WORK,VOICE:503-345-4401
+TEL;TYPE=CELL,VOICE:(503) 756-1803
+EMAIL;TYPE=WORK,INTERNET:bryap@selfenhancement.org
+EMAIL;TYPE=HOME,INTERNET:brya.patterson@gmail.com
+URL;TYPE=WORK:https://www.selfenhancement.org
+URL;TYPE=HOME:https://bryap.com
+URL;TYPE=CARD:https://bryap.com/card.html
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/brya-patterson/
+ADR;TYPE=HOME:;;Portland;OR;;;USA
+NOTE:Pronounced br-eye-ah. Data professional & technology leader.
+END:VCARD

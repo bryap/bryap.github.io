@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-79XBZ4630Q"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-79XBZ4630Q');
+		</script>
+		<title>Virtual Business Card | Brya Kim Patterson</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- Prevent search indexing for unlinked virtual business card -->
+		<meta name="robots" content="noindex, nofollow" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<style>
+			/* Virtual Business Card - Horizontal Landscape Layout */
+			.vcard-scene {
+				max-width: 960px;
+				margin: 1.5em auto 2em auto;
+				padding: 0 1em;
+			}
+
+			.vcard-card {
+				background: #ffffff;
+				border: solid 1px rgba(140, 88, 69, 0.25);
+				border-top: 4px solid #8C5845;
+				border-radius: 6px;
+				box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+				display: flex;
+				flex-direction: row;
+				align-items: stretch;
+				overflow: hidden;
+			}
+
+			/* Left Column: Info & Contacts */
+			.vcard-main-col {
+				flex: 1;
+				padding: 2.25em 2.5em 2em 2.5em;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			/* Profile Header */
+			.vcard-profile {
+				display: flex;
+				align-items: center;
+				gap: 1.5em;
+			}
+
+			.vcard-avatar-wrap {
+				flex: 0 0 100px;
+				width: 100px;
+				height: 100px;
+			}
+
+			.vcard-avatar {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				object-fit: cover;
+				display: block;
+				border: 2px solid #8C5845;
+				box-shadow: 0 3px 10px rgba(140, 88, 69, 0.2);
+			}
+
+			.vcard-profile-text {
+				flex: 1;
+			}
+
+			.vcard-name {
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-size: 1.55em;
+				font-weight: 800;
+				letter-spacing: 0.04em;
+				color: #3c3b3b;
+				margin: 0 0 0.15em 0;
+				line-height: 1.2;
+			}
+
+			.vcard-pronunciation {
+				font-style: italic;
+				color: #8C5845;
+				font-size: 0.85em;
+				margin-bottom: 0.35em;
+				font-weight: 400;
+			}
+
+			.vcard-title {
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-size: 0.8em;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: #555555;
+				margin: 0 0 0.35em 0;
+				line-height: 1.35;
+			}
+
+			.vcard-org-loc {
+				font-size: 0.85em;
+				color: #666666;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.45em;
+			}
+
+			.vcard-org-loc a {
+				color: #8C5845;
+				text-decoration: none;
+				border-bottom: dotted 1px #8C5845;
+			}
+
+			.vcard-org-loc a:hover {
+				color: #764837;
+				border-bottom-color: #764837;
+			}
+
+			.vcard-dot {
+				color: #bbbbbb;
+			}
+
+			/* Divider */
+			.vcard-divider {
+				border: 0;
+				border-top: 1px solid rgba(140, 88, 69, 0.15);
+				margin: 1.4em 0 1.2em 0;
+			}
+
+			/* Contacts 2-Column Row */
+			.vcard-contacts-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1.5em;
+			}
+
+			.vcard-contact-group {
+				background: #fafafa;
+				border: 1px solid rgba(140, 88, 69, 0.14);
+				border-radius: 4px;
+				padding: 0.9em 1.1em;
+			}
+
+			.vcard-group-tag {
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-size: 0.65em;
+				font-weight: 800;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				color: #8C5845;
+				margin-bottom: 0.6em;
+				display: flex;
+				align-items: center;
+				gap: 0.4em;
+			}
+
+			.vcard-contact-line {
+				display: flex;
+				align-items: center;
+				gap: 0.65em;
+				font-size: 0.88em;
+				color: #3c3b3b;
+				margin-bottom: 0.45em;
+				word-break: break-word;
+			}
+
+			.vcard-contact-line:last-child {
+				margin-bottom: 0;
+			}
+
+			.vcard-contact-line i {
+				color: #8C5845;
+				font-size: 0.95em;
+				width: 1.1em;
+				text-align: center;
+				flex-shrink: 0;
+			}
+
+			.vcard-contact-line a {
+				color: #3c3b3b;
+				text-decoration: none;
+				border-bottom: 1px dotted rgba(140, 88, 69, 0.35);
+				transition: color 0.15s ease, border-color 0.15s ease;
+			}
+
+			.vcard-contact-line a:hover {
+				color: #8C5845 !important;
+				border-bottom-color: #8C5845;
+			}
+
+			/* Right Column: Integrated QR Code */
+			.vcard-qr-col {
+				flex: 0 0 240px;
+				background: #faf8f6;
+				border-left: 1px solid rgba(140, 88, 69, 0.15);
+				padding: 2em 1.5em;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+
+			.vcard-qr-label {
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-size: 0.7em;
+				font-weight: 800;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: #8C5845;
+				margin-bottom: 0.8em;
+			}
+
+			.vcard-qr-frame {
+				background: #ffffff;
+				padding: 0.75em;
+				border-radius: 6px;
+				border: 1px solid rgba(140, 88, 69, 0.18);
+				box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+				display: inline-block;
+				margin-bottom: 0.8em;
+			}
+
+			.vcard-qr-img {
+				width: 155px;
+				height: 155px;
+				display: block;
+			}
+
+			.vcard-qr-subtext {
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-size: 0.72em;
+				font-weight: 700;
+				letter-spacing: 0.05em;
+				color: #666666;
+			}
+
+			.vcard-qr-subtext a {
+				color: #666666;
+				text-decoration: none;
+				border-bottom: 1px dotted rgba(140, 88, 69, 0.3);
+			}
+
+			.vcard-qr-subtext a:hover {
+				color: #8C5845 !important;
+			}
+
+			/* Responsive: Mobile Stack */
+			@media screen and (max-width: 820px) {
+				.vcard-card {
+					flex-direction: column;
+				}
+
+				.vcard-main-col {
+					padding: 1.75em 1.5em 1.5em 1.5em;
+				}
+
+				.vcard-contacts-row {
+					grid-template-columns: 1fr;
+					gap: 1em;
+				}
+
+				.vcard-qr-col {
+					flex: auto;
+					border-left: 0;
+					border-top: 1px solid rgba(140, 88, 69, 0.15);
+					padding: 1.75em 1.5em;
+				}
+
+				.vcard-qr-img {
+					width: 160px;
+					height: 160px;
+				}
+			}
+
+			@media screen and (max-width: 520px) {
+				.vcard-profile {
+					flex-direction: column;
+					text-align: center;
+					gap: 1em;
+				}
+
+				.vcard-org-loc {
+					justify-content: center;
+				}
+			}
+
+			/* Compact Footer */
+			#footer.vcard-footer {
+				padding: 1.5em 0 1.5em 0;
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header (Top Nav for full website navigation) -->
+			<header id="header">
+				<h1><a href="index.html">Brya K. Patterson Portfolio</a></h1>
+				<nav class="links">
+					<ul>
+						<li><a href="projects_work.html">Projects</a></li>
+						<li><a href="resume_skills.html">Resume</a></li>
+						<li><a href="about_contact.html">About</a></li>
+					</ul>
+				</nav>
+				<nav class="main">
+					<ul>
+						<li class="menu">
+							<a class="fa-bars" href="#menu">Menu</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Menu (Responsive Drawer) -->
+			<section id="menu">
+				<h1>Menu</h1>
+				<section>
+					<ul class="links">
+						<li>
+							<a href="projects_work.html">
+								<h3>Projects and Other Works</h3>
+								<p>End-to-end data pipelines, predictive ML models, research, and passion projects.</p>
+							</a>
+						</li>
+						<li>
+							<a href="resume_skills.html">
+								<h3>Resume and Skills</h3>
+								<p>Technical expertise, toolstack, and professional career history.</p>
+							</a>
+						</li>
+						<li>
+							<a href="about_contact.html">
+								<h3>About and Contact</h3>
+								<p>Bio, professional background, and how to connect.</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Main Content: Compact Virtual Business Card -->
+			<div id="main">
+				<div class="vcard-scene">
+
+					<article class="vcard-card">
+
+						<!-- Left Column: Identity & Direct Contacts -->
+						<div class="vcard-main-col">
+
+							<!-- Profile Header -->
+							<div class="vcard-profile">
+								<div class="vcard-avatar-wrap">
+									<img src="images/brya_headshot.png" alt="Brya Kim Patterson" class="vcard-avatar" />
+								</div>
+								<div class="vcard-profile-text">
+									<h2 class="vcard-name">Brya Kim Patterson</h2>
+									<div class="vcard-pronunciation">(pronounced br-eye-ah)</div>
+									<div class="vcard-title">Technology &amp; AI Initiatives | Data Professional</div>
+									<div class="vcard-org-loc">
+										<a href="https://www.selfenhancement.org/" target="_blank" rel="noopener noreferrer">Self Enhancement, Inc.</a>
+										<span class="vcard-dot">&bull;</span>
+										<span><i class="fas fa-map-marker-alt"></i> Portland, OR</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Divider -->
+							<hr class="vcard-divider" />
+
+							<!-- Contact Channels (Work & Personal side-by-side) -->
+							<div class="vcard-contacts-row">
+
+								<!-- Work Contact Group -->
+								<div class="vcard-contact-group">
+									<div class="vcard-group-tag">
+										<i class="fas fa-briefcase"></i> Work
+									</div>
+									<div class="vcard-contact-line">
+										<i class="fas fa-phone-alt"></i>
+										<a href="tel:5033454401">503-345-4401</a>
+									</div>
+									<div class="vcard-contact-line">
+										<i class="fas fa-envelope"></i>
+										<a href="mailto:bryap@selfenhancement.org">bryap@selfenhancement.org</a>
+									</div>
+								</div>
+
+								<!-- Personal Contact Group -->
+								<div class="vcard-contact-group">
+									<div class="vcard-group-tag">
+										<i class="fas fa-user"></i> Personal
+									</div>
+									<div class="vcard-contact-line">
+										<i class="fas fa-mobile-alt"></i>
+										<a href="tel:5037561803">(503) 756-1803</a>
+									</div>
+									<div class="vcard-contact-line">
+										<i class="fas fa-envelope-open"></i>
+										<a href="mailto:brya.patterson@gmail.com">brya.patterson@gmail.com</a>
+									</div>
+									<div class="vcard-contact-line">
+										<i class="fab fa-linkedin"></i>
+										<a href="https://www.linkedin.com/in/brya-patterson/" target="_blank" rel="noopener noreferrer">brya-patterson</a>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+						<!-- Right Column: Integrated QR Code -->
+						<div class="vcard-qr-col">
+							<div class="vcard-qr-label">Scan to Share</div>
+							<div class="vcard-qr-frame">
+								<img src="images/brya_card_qr.svg" alt="QR Code to bryap.com/card.html" class="vcard-qr-img" />
+							</div>
+							<div class="vcard-qr-subtext">
+								<a href="https://bryap.com/card.html">bryap.com/card.html</a>
+							</div>
+						</div>
+
+					</article>
+
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<section id="footer" class="vcard-footer">
+				<p class="copyright">&copy; Brya K. Patterson Portfolio. Design: <a href="https://html5up.net/future-imperfect">HTML5 UP - Future Imperfect</a>.</p>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
